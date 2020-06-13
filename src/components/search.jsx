@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Sizing from './../styles/sizeStyle.css'
+import searchStyle from './../styles/searchStyle.css'
 
 export default class search extends Component {
 
@@ -29,20 +30,16 @@ export default class search extends Component {
     render() {
         return (
             <div>
-                <div>
-                    Search
-                </div>
-
                 <form onSubmit={this.onSubmit}>
-                    <div class="form-group">
+                    <div class="searchdiv form-group">
                         <label className="sizing" for="lblEnter">Enter location</label>
+                        <br />
                         <input type="inputLocation" class="sizing form-control" id="inputLocation"
                             aria-describedby="inputLocation" placeholder="NuwaraEliya..." onChange={this.onChangeSearchKeyword} />
+                        <br />
+                        <button type="submit" class="sizing btn btn-primary ">Search</button>
                     </div>
-                    <button type="submit" class="sizing btn btn-primary ">Search</button>
                 </form>
-
-
             </div>
         )
     }

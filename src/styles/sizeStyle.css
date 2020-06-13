@@ -1,3 +1,8 @@
 .sizing{
     font-size: 16px !important; 
 }
+
+.largeCompanyHeading{
+    font-size: 24px !important; 
+    font-weight: bold !important;
+}

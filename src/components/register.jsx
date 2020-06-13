@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import sizing from './../styles/sizeStyle.css'
+import regStyle from './../styles/registerStyle.css'
 
 export default class register extends Component {
 
@@ -108,51 +110,51 @@ export default class register extends Component {
 
                 <form onSubmit={this.onSubmit}>
 
-                    <div class="form-group">
-                        <label for="inputUsername">Username: </label>
-                        <input class="form-control" type="text" required onChange={this.onChangeUsername} />
+                    <div class="sizing form-group">
+                        <label className="sizing" for="inputUsername">Username: </label>
+                        <input className="sizing form-control" type="text" required onChange={this.onChangeUsername} />
                     </div>
 
-                    <div class="form-group">
-                        <label for="inputEmail">Email address: </label>
-                        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required onChange={this.onChangeEmail} />
+                    <div class="sizing form-group">
+                        <label className="sizing" for="inputEmail">Email address: </label>
+                        <input type="email" className="sizing form-control" id="inputEmail" aria-describedby="emailHelp" required onChange={this.onChangeEmail} />
                     </div>
 
-                    <div class="form-group">
-                        <label for="inputAddress">Address: </label>
-                        <input class="form-control" type="text" required onChange={this.onChangeAddress} />
+                    <div class="sizing form-group">
+                        <label className="sizing" for="inputAddress">Address: </label>
+                        <input className="sizing form-control" type="text" required onChange={this.onChangeAddress} />
                     </div>
 
 
-                    <div class="form-check">
-                        <label for="inputGender">Gender: </label>
+                    <div className="sizing radiostyle form-check">
+                        <label className="sizing" for="inputGender">Gender: </label>
                         <div>
-                            <input class="form-check-input" type="radio" name="genderRadios" id="genderRadioM" checked onChange={this.onMaleChecked} />
-                            <label class="form-check-label" for="genderRadiosM"> Male </label>
+                            <input className="sizing form-check-input" type="radio" name="genderRadios" id="genderRadioM" checked onChange={this.onMaleChecked} />
+                            <label className="radiostyle form-check-label" for="genderRadiosM"> Male </label>
                         </div>
                         <div>
-                            <input class="form-check-input" type="radio" name="genderRadios" id="genderRadiosF" onChange={this.onFemaleChecked} />
-                            <label class="form-check-label" for="genderRadiosM"> Female </label>
+                            <input className="sizing form-check-input" type="radio" name="genderRadios" id="genderRadiosF" onChange={this.onFemaleChecked} />
+                            <label className="radiostyle sizing form-check-label" for="genderRadiosM"> Female </label>
                         </div>
 
                     </div>
 
 
-                    <div class="form-group">
-                        <label for="inputPassword">Password</label>
-                        <input type="password" class="form-control" id="inputPassword" required onChange={this.onChangePassword} />
+                    <div class="sizing form-group">
+                        <label className="sizing" for="inputPassword">Password</label>
+                        <input type="password" class="sizing form-control" id="inputPassword" required onChange={this.onChangePassword} />
                     </div>
 
                     <div class="form-group">
-                        <label for="inputRePassword">Re Enter Password</label>
-                        <input type="password" class="form-control" id="inputRePassword" required onChange={this.onChangeRePassword} />
+                        <label className="sizing" for="inputRePassword">Re Enter Password</label>
+                        <input type="password" class="sizing form-control" id="inputRePassword" required onChange={this.onChangeRePassword} />
                     </div>
 
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="agree" required />
-                        <label class="form-check-label" for="agree">Agree terms and conditions</label>
+                    <div class="sizing  form-check">
+                        <input type="checkbox" class="sizing form-check-input" id="agree" required />
+                        <label class="sizing radiostyle form-check-label" for="agree">Agree terms and conditions</label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="submit" class="sizing btn btn-primary">Register</button>
                 </form>
             </div>
         )

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import sizing from './../styles/sizeStyle.css'
+import loginstyle from './../styles/loginstyle.css'
 
 export default class login extends Component {
 
@@ -59,26 +61,30 @@ export default class login extends Component {
 
     render() {
         return (
-            <div>
-                <h2>
-                    <center>Login</center>
-                </h2>
+            <div className="logindiv">
+                <div className="sizing">
+                    <h2>
+                        <center>Login</center>
+                    </h2>
 
-                <form onSubmit={this.onSubmit}>
+                    <form onSubmit={this.onSubmit}>
 
-                    <div class="form-group">
-                        <label for="inputUsername">Username: </label>
-                        <input class="form-control" type="text" required onChange={this.onChangeUsername} />
-                    </div>
+                        <div class="sizing form-group">
+                            <label for="inputUsername">Username: </label>
+                            <input class="sizing form-control" type="text" required onChange={this.onChangeUsername} />
+                        </div>
 
-                    <div class="form-group">
-                        <label for="inputPassword">Password</label>
-                        <input type="password" class="form-control" id="inputPassword" required onChange={this.onChangePassword} />
-                    </div>
+                        <div class="form-group">
+                            <label className="sizing" for="inputPassword">Password</label>
+                            <input type="password" class="sizing form-control" id="inputPassword" required onChange={this.onChangePassword} />
+                        </div>
 
-                    <button type="submit" class="btn btn-primary">Login</button>
+                        <div className="buttonCenter">
+                            <button type="submit" class="sizing btn btn-primary">Login</button>
+                        </div>
+                    </form>
 
-                </form>
+                </div>
 
             </div>
         )
