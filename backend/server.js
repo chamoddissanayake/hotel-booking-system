@@ -20,8 +20,10 @@ connection.once('open', () => {
 
 
 const hotelsRouter = require('./routes/hotels');
+const usersRouter = require('./routes/users');
 
 app.use('/hotels', hotelsRouter);
+app.use('/users', usersRouter);
 
 app.listen(port, () => {
     console.log(`Server started on port : ${port}`);
