@@ -9,11 +9,15 @@ export default class searchResults extends Component {
 
         this.state = {
             searchKeyword: '',
-            resultList: []
+            resultList: [],
+            isloading: true
         }
     }
 
     componentDidMount() {
+        this.setState({
+            isloading: true
+        });
 
         // console.log(new URLSearchParams(this.props.location.search).get("location"));
         let url = 'http://localhost:5000/hotels';
@@ -27,10 +31,18 @@ export default class searchResults extends Component {
                 // console.log("In search result component--");
                 // console.log(this.state.resultList);
                 // console.log("In search result component-=-");
+                this.setState({
+                    isloading: false
+                });
             })
             .catch((error) => {
                 console.log(error);
+                this.setState({
+                    isloading: false
+                });
             })
+
+
     }
 
 
@@ -38,6 +50,12 @@ export default class searchResults extends Component {
         return (
             <div>
                 Search Results Components
+
+
+                {(!this.state.isloading) ?
+                    ((this.state.resultList.length > 0) ? <div>{this.state.resultList.length + " "} results found</div> : <div>Sorry! not found</div>)
+                    : <div> Loading</div>
+                }
 
                 {this.state.resultList.map((hotel, index) => <PreviewHotel hotel={hotel} key={index} />)}
 
