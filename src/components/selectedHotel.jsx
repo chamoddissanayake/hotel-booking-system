@@ -3,6 +3,7 @@ import axios from 'axios';
 import Styles from './../styles/selectedHotel.css'
 // import Styles1 from "./../styles/previewHotelsStyle.css"
 import Sizing from './../styles/sizeStyle.css'
+import priceCalc from '../util'
 
 export default class selectedHotel extends Component {
 
@@ -17,7 +18,10 @@ export default class selectedHotel extends Component {
             currentHotelObj: {},
             temp: '>>>'
         }
+
     }
+
+
 
     componentDidMount() {
 
@@ -129,6 +133,11 @@ export default class selectedHotel extends Component {
                             <tr>
                                 <div className="sizing">
                                     Price Per Room:{' ' + this.state.currentHotelObj.price}
+                                </div>
+                            </tr>
+                            <tr>
+                                <div className="sizing">
+                                    Special Discounted Price Per Room:{' ' + priceCalc(this.state.currentHotelObj.price)}
                                 </div>
                             </tr>
                             <tr>
