@@ -9,6 +9,7 @@ export default class extends Component {
         this.state = {
             currentHotel: {}
         }
+        this.selectHotel = this.selectHotel.bind(this);
     }
 
     componentDidMount() {
@@ -20,7 +21,10 @@ export default class extends Component {
             console.log(this.state.currentHotel);
         });
 
-
+    }
+    selectHotel(e) {
+        console.log(this.state.currentHotel._id);
+        window.location = '/select/' + this.state.currentHotel._id
     }
 
     render() {
@@ -44,6 +48,8 @@ export default class extends Component {
                         this.state.currentHotel.facilities ? this.state.currentHotel.facilities.map((value, index) => <li key={index}>{value}</li>) : ''
                     }
                 </ul>                                <br />
+
+                <button onClick={this.selectHotel}>  View This Hotel</button>
 
             </div>
         )
