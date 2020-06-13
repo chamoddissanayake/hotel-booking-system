@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import Styles from './../styles/selectedHotel.css'
-// import Styles1 from "./../styles/previewHotelsStyle.css"
 import Sizing from './../styles/sizeStyle.css'
 import priceCalc from '../util'
 
@@ -9,9 +8,6 @@ export default class selectedHotel extends Component {
 
     constructor(props) {
         super(props);
-
-        // this.onChangeSearchKeyword = this.onChangeSearchKeyword.bind(this);
-        // this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             currentHotelId: '',
@@ -176,31 +172,6 @@ export default class selectedHotel extends Component {
                     <tr>
                     </tr>
                 </table>
-
-
-
-
-
-
-
-
-
-                {/* {this.state.currentHotelObj._id}<br /> */}
-                {/* {this.state.currentHotelObj.availableCount} <br /> */}
-                {/* {this.state.currentHotelObj.description}<br /> */}
-                {/* {this.state.currentHotelObj.imageURL_1}<br />
-                {this.state.currentHotelObj.imageURL_2}<br />
-                {this.state.currentHotelObj.imageURL_3}<br />
-                {this.state.currentHotelObj.imageURL_main}<br /> */}
-                {/* {this.state.currentHotelObj.location}<br /> */}
-                {/* {this.state.currentHotelObj.price}<br /> */}
-
-                {/* <ul>
-                    {
-                        this.state.currentHotelObj.facilities ? this.state.currentHotelObj.facilities.map((value, index) => <li key={index}>{value}</li>) : ''
-                    }
-                </ul> */}
-
 
             </div>
         )

@@ -30,9 +30,6 @@ export default class searchResults extends Component {
         axios.get(url)
             .then(resultList => {
                 this.setState({ resultList: resultList.data })
-                // console.log("In search result component--");
-                // console.log(this.state.resultList);
-                // console.log("In search result component-=-");
                 this.setState({
                     isloading: false
                 });

@@ -143,14 +143,6 @@ export default class register extends Component {
                             </tr>
                         </table>
 
-                        {/* <div>
-                            <input className="sizing form-check-input" type="radio" name="genderRadios" id="genderRadioM" checked onChange={this.onMaleChecked} />
-                            <label className="form-check-label" for="genderRadiosM"> Male </label>
-                        </div>
-                        <div>
-                            <input className="sizing form-check-input" type="radio" name="genderRadios" id="genderRadiosF" onChange={this.onFemaleChecked} />
-                            <label className="sizing form-check-label" for="genderRadiosM"> Female </label>
-                        </div> */}
 
                     </div>
 
