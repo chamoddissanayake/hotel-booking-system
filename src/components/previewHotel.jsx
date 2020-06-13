@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Styles from "./../styles/previewHotelsStyle.css"
 
 export default class extends Component {
 
@@ -7,7 +8,8 @@ export default class extends Component {
         super(props);
 
         this.state = {
-            currentHotel: {}
+            currentHotel: {},
+            next: '>>>'
         }
         this.selectHotel = this.selectHotel.bind(this);
     }
@@ -31,26 +33,87 @@ export default class extends Component {
 
         return (
             <div>
+                <div className="previewItemContainer">
 
-                {this.state.currentHotel._id}                   <br />
-                {this.state.currentHotel.availableCount}        <br />
-                {this.state.currentHotel.description}           <br />
-                {this.state.currentHotel.imageURL_1}            <br />
-                {this.state.currentHotel.imageURL_2}            <br />
-                {this.state.currentHotel.imageURL_3}            <br />
-                {this.state.currentHotel.imageURL_main}         <br />
-                {this.state.currentHotel.location}              <br />
-                {this.state.currentHotel.name}                  <br />
-                {this.state.currentHotel.price}                 <br />
-                {this.state.currentHotel.rating}                <br />
-                <ul>
-                    {
-                        this.state.currentHotel.facilities ? this.state.currentHotel.facilities.map((value, index) => <li key={index}>{value}</li>) : ''
-                    }
-                </ul>                                <br />
 
-                <button onClick={this.selectHotel}>  View This Hotel</button>
+                    <table>
+                        <tr>
+                            <td className="tdleft">
+                                {/* Left side start */}
+                                <img src={this.state.currentHotel.imageURL_main} alt="Image Not Found" width="300" />
+                                {/* Left side end */}
+                            </td>
+                            <td className="tdcenter">
+                                {/* Right  side start */}
+                                <tr>
+                                    <div className="lblName">
+                                        {this.state.currentHotel.name}
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <div className="lblLocation">
+                                        Location: {this.state.currentHotel.location}
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <div className="lblPrice">
+                                        Price Per Room: {this.state.currentHotel.price}
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <div className="lblRating">
+                                        Rating: {this.state.currentHotel.rating}
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <div className="lblcount">
+                                        Available Room Count: {this.state.currentHotel.availableCount}
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <div className="lblDescription">
+                                        Description: {this.state.currentHotel.description}
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <div className="lblFacilities">
+                                        Facilities:<br />
+                                        <ul>
+                                            {
+                                                this.state.currentHotel.facilities ? this.state.currentHotel.facilities.map((value, index) => <li key={index}>{value}</li>) : ''
+                                            }
+                                        </ul>
+                                    </div>
+                                </tr>
 
+                                {/* Right side end */}
+                            </td>
+                            <td className="tdright">
+                                <button class="btn btn-primary" onClick={this.selectHotel}>  View This Hotel{this.state.next}</button>
+                            </td>
+                        </tr>
+                    </table>
+
+                    {/* {this.state.currentHotel._id}                   <br /> */}
+                    {/* {this.state.currentHotel.availableCount}        <br /> */}
+                    {/* {this.state.currentHotel.description}           <br /> */}
+                    {/* {this.state.currentHotel.imageURL_1}            <br />
+                    {this.state.currentHotel.imageURL_2}            <br />
+                    {this.state.currentHotel.imageURL_3}            <br />
+                    {this.state.currentHotel.imageURL_main}         <br /> */}
+                    {/* {this.state.currentHotel.location}              <br /> */}
+                    {/* <br /> */}
+                    {/* {this.state.currentHotel.price}                 <br /> */}
+                    {/* {this.state.currentHotel.rating}                <br /> */}
+                    {/* <ul>
+                        {
+                            this.state.currentHotel.facilities ? this.state.currentHotel.facilities.map((value, index) => <li key={index}>{value}</li>) : ''
+                        }
+                    </ul>                                <br /> */}
+
+
+                </div>
+                <br />
             </div>
         )
     }

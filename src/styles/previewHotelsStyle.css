@@ -1,0 +1,38 @@
+.previewItemContainer{
+    border: 3px solid black;
+    border-radius: 5px;
+    background-image: url('https://files.123freevectors.com/wp-content/original/108382-light-blue-curve.jpg');
+}
+.lblName{
+font-size: 36;
+font-weight: bold;
+}
+.lblLocation{
+
+}
+.lblPrice{
+
+}
+.lblRating{
+
+}
+.lblcount{
+
+}
+.lblDescription{
+
+}
+.lblFacilities{
+
+}
+
+.tdleft{
+    padding-left: 15px;
+}
+.tdcenter{
+    padding-left: 25px;
+}
+.tdright{
+    padding-left: 80px;
+}
+

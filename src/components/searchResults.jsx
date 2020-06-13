@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import PreviewHotel from './previewHotel.jsx';
+import Styles from './../styles/searchResultStyles.css'
 
 export default class searchResults extends Component {
 
@@ -49,15 +50,22 @@ export default class searchResults extends Component {
     render() {
         return (
             <div>
-                Search Results Components
+                <div className="searchResultsHeading">
+                    <h2 className="searchResultsLbl">Search Results</h2>
+                </div>
 
+                <div className="searchResultsHeading">
+                    {(!this.state.isloading) ?
+                        ((this.state.resultList.length > 0) ? <div>{this.state.resultList.length + " "} results found</div> : <div>Sorry! not found</div>)
+                        : <div> Loading</div>
+                    }
+                </div>
 
-                {(!this.state.isloading) ?
-                    ((this.state.resultList.length > 0) ? <div>{this.state.resultList.length + " "} results found</div> : <div>Sorry! not found</div>)
-                    : <div> Loading</div>
-                }
+                <div >
+                    {this.state.resultList.map((hotel, index) => <PreviewHotel hotel={hotel} key={index} />)}
 
-                {this.state.resultList.map((hotel, index) => <PreviewHotel hotel={hotel} key={index} />)}
+                </div>
+
 
             </div>
         )
