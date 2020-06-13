@@ -54,7 +54,7 @@ export default class login extends Component {
                     alert('user not found ');
                 }
             }).catch(error => {
-                alert('System Error occured');
+                alert('user not found');
             });
 
     }

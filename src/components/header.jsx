@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import utils from './../utils';
 import sizing from './../styles/sizeStyle.css'
+import sty from './../styles/headerstyles.css';
+
 
 
 export default class header extends Component {
@@ -35,9 +37,13 @@ export default class header extends Component {
                         <ul className="navbar-nav mr-auto">
                         </ul>
 
-                        <Link to="/register">
-                            <button type="button" className="sizing btn btn-warning">SignUp</button>
-                        </Link>
+                        <div className="aligngap">
+                            <Link to="/register">
+                                <button type="button" className="sizing btn btn-warning">SignUp</button>
+                            </Link>
+                        </div>
+
+
                         {utils.isEmpty(this.state.loggedInUser) && <span>
                             <Link to="/login">
                                 <button type="button" className="sizing btn btn-info">Login</button>
@@ -52,7 +58,9 @@ export default class header extends Component {
                 </nav>
                 <div>
                     {!utils.isEmpty(this.state.loggedInUser) && <span>
-                        Hi, {this.state.loggedInUser}
+                        <div className="sizing">
+                            Hi, {this.state.loggedInUser}
+                        </div>
                     </span>}
                 </div>
             </div>

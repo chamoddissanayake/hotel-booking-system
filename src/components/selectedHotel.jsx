@@ -14,7 +14,8 @@ export default class selectedHotel extends Component {
 
         this.state = {
             currentHotelId: '',
-            currentHotelObj: {}
+            currentHotelObj: {},
+            temp: '>>>'
         }
     }
 
@@ -122,27 +123,27 @@ export default class selectedHotel extends Component {
                             {/* Right side start */}
                             <tr>
                                 <div className="sizing">
-                                    Location:{this.state.currentHotelObj.location}
+                                    Location:{' ' + this.state.currentHotelObj.location}
                                 </div>
                             </tr>
                             <tr>
                                 <div className="sizing">
-                                    Price Per Room:{this.state.currentHotelObj.price}
+                                    Price Per Room:{' ' + this.state.currentHotelObj.price}
                                 </div>
                             </tr>
                             <tr>
                                 <div className="sizing">
-                                    Rating{this.state.currentHotelObj.rating}
+                                    Rating:{' ' + this.state.currentHotelObj.rating}
                                 </div>
                             </tr>
                             <tr>
                                 <div className="sizing">
-                                    Available Room Count:{this.state.currentHotelObj.availableCount}
+                                    Available Room Count:{' ' + this.state.currentHotelObj.availableCount}
                                 </div>
                             </tr>
                             <tr>
                                 <div className="sizing">
-                                    Description:{this.state.currentHotelObj.description}
+                                    Description:{' ' + this.state.currentHotelObj.description}
                                 </div>
                             </tr>
                             <tr>
@@ -153,6 +154,11 @@ export default class selectedHotel extends Component {
                                             this.state.currentHotelObj.facilities ? this.state.currentHotelObj.facilities.map((value, index) => <li key={index}>{value}</li>) : ''
                                         }
                                     </ul>
+                                </div>
+                            </tr>
+                            <tr>
+                                <div className="sizing">
+                                    <button type="button" class=" sizing btn btn-primary">Reserve {this.state.temp}</button>
                                 </div>
                             </tr>
                             {/* Right side end */}

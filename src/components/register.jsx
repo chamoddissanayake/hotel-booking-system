@@ -125,17 +125,32 @@ export default class register extends Component {
                         <input className="sizing form-control" type="text" required onChange={this.onChangeAddress} />
                     </div>
 
-
-                    <div className="sizing radiostyle form-check">
+                    {/* radiostyle */}
+                    <div className="sizing  form-check">
                         <label className="sizing" for="inputGender">Gender: </label>
-                        <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <input className="sizing rad form-check-input" type="radio" name="genderRadios" id="genderRadioM" checked onChange={this.onMaleChecked} />
+
+                                    <label className="lbl1 form-check-label" for="genderRadiosM"> Male </label>
+                                </td>
+                                <td>
+                                    <input className="sizing rad form-check-input" type="radio" name="genderRadios" id="genderRadiosF" onChange={this.onFemaleChecked} />
+
+                                    <label className="sizing form-check-label" for="genderRadiosM"> Female </label>
+                                </td>
+                            </tr>
+                        </table>
+
+                        {/* <div>
                             <input className="sizing form-check-input" type="radio" name="genderRadios" id="genderRadioM" checked onChange={this.onMaleChecked} />
-                            <label className="radiostyle form-check-label" for="genderRadiosM"> Male </label>
+                            <label className="form-check-label" for="genderRadiosM"> Male </label>
                         </div>
                         <div>
                             <input className="sizing form-check-input" type="radio" name="genderRadios" id="genderRadiosF" onChange={this.onFemaleChecked} />
-                            <label className="radiostyle sizing form-check-label" for="genderRadiosM"> Female </label>
-                        </div>
+                            <label className="sizing form-check-label" for="genderRadiosM"> Female </label>
+                        </div> */}
 
                     </div>
 
@@ -154,7 +169,9 @@ export default class register extends Component {
                         <input type="checkbox" class="sizing form-check-input" id="agree" required />
                         <label class="sizing radiostyle form-check-label" for="agree">Agree terms and conditions</label>
                     </div>
-                    <button type="submit" class="sizing btn btn-primary">Register</button>
+                    <div className="centerdiv">
+                        <button type="submit" class="sizing btn btn-primary">Register</button>
+                    </div>
                 </form>
             </div>
         )

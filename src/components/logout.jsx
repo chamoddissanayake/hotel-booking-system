@@ -25,8 +25,7 @@ export default class logout extends Component {
     render() {
         return (
             <div>
-                Logging out. Please wait ....
-                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
             </div>
         )
     }

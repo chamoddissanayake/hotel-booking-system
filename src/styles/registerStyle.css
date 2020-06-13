@@ -1,3 +1,15 @@
 .radiostyle{
     margin-left: 15px !important;
 }
+.centerdiv{
+    text-align: center;
+}
+
+.lbl1{
+    width: 100px;
+}
+
+.rad{
+    margin-top: 6px !important;
+    margin-left: -14px !important;
+}
