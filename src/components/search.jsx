@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Sizing from './../styles/sizeStyle.css'
 
 export default class search extends Component {
 
@@ -34,11 +35,11 @@ export default class search extends Component {
 
                 <form onSubmit={this.onSubmit}>
                     <div class="form-group">
-                        <label for="lblEnter">Enter location</label>
-                        <input type="inputLocation" class="form-control" id="inputLocation"
+                        <label className="sizing" for="lblEnter">Enter location</label>
+                        <input type="inputLocation" class="sizing form-control" id="inputLocation"
                             aria-describedby="inputLocation" placeholder="NuwaraEliya..." onChange={this.onChangeSearchKeyword} />
                     </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="sizing btn btn-primary ">Search</button>
                 </form>
 
 

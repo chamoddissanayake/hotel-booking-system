@@ -38,45 +38,45 @@ export default class extends Component {
 
                     <table>
                         <tr>
-                            <td className="tdleft">
+                            <td className="sizing tdleft">
                                 {/* Left side start */}
                                 <img src={this.state.currentHotel.imageURL_main} alt="Image Not Found" width="300" />
                                 {/* Left side end */}
                             </td>
-                            <td className="tdcenter">
+                            <td className="sizing tdcenter">
                                 {/* Right  side start */}
                                 <tr>
-                                    <div className="lblName">
+                                    <div className="sizing lblName">
                                         {this.state.currentHotel.name}
                                     </div>
                                 </tr>
                                 <tr>
-                                    <div className="lblLocation">
+                                    <div className="sizing lblLocation">
                                         Location: {this.state.currentHotel.location}
                                     </div>
                                 </tr>
                                 <tr>
-                                    <div className="lblPrice">
+                                    <div className="sizing lblPrice">
                                         Price Per Room: {this.state.currentHotel.price}
                                     </div>
                                 </tr>
                                 <tr>
-                                    <div className="lblRating">
+                                    <div className="sizing lblRating">
                                         Rating: {this.state.currentHotel.rating}
                                     </div>
                                 </tr>
                                 <tr>
-                                    <div className="lblcount">
+                                    <div className="sizing lblcount">
                                         Available Room Count: {this.state.currentHotel.availableCount}
                                     </div>
                                 </tr>
                                 <tr>
-                                    <div className="lblDescription">
+                                    <div className="sizing lblDescription">
                                         Description: {this.state.currentHotel.description}
                                     </div>
                                 </tr>
                                 <tr>
-                                    <div className="lblFacilities">
+                                    <div className="sizing lblFacilities">
                                         Facilities:<br />
                                         <ul>
                                             {
@@ -89,7 +89,7 @@ export default class extends Component {
                                 {/* Right side end */}
                             </td>
                             <td className="tdright">
-                                <button class="btn btn-primary" onClick={this.selectHotel}>  View This Hotel{this.state.next}</button>
+                                <button class="sizing btn btn-primary" onClick={this.selectHotel}>  View This Hotel{this.state.next}</button>
                             </td>
                         </tr>
                     </table>

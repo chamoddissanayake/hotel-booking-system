@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import Styles from './../styles/selectedHotel.css'
+// import Styles1 from "./../styles/previewHotelsStyle.css"
+import Sizing from './../styles/sizeStyle.css'
 
 export default class selectedHotel extends Component {
 
@@ -68,69 +70,121 @@ export default class selectedHotel extends Component {
                 </div>
                 <br />
 
-                {/* //Slider - start */}
-                <div class="container" style={sliderContainerStyle}>
+                <table>
+                    <tr>
+                        <td className="tleft">
+                            {/* Left side start */}
+                            {/* //Slider - start */}
+                            <div style={sliderContainerStyle}>
 
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel" style={sliderCaroselStyle} >
+                                <div id="myCarousel" class="carousel slide" data-ride="carousel" style={sliderCaroselStyle} >
 
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                            <li data-target="#myCarousel" data-slide-to="3"></li>
-                        </ol>
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                                    </ol>
 
 
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img src={this.state.currentHotelObj.imageURL_main} alt="Image Not Found" style={sliderImagestyle} />
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src={this.state.currentHotelObj.imageURL_main} alt="Image Not Found" style={sliderImagestyle} />
+                                        </div>
+
+                                        <div class="item">
+                                            <img src={this.state.currentHotelObj.imageURL_1} alt="Image Not Found" style={sliderImagestyle} />
+                                        </div>
+
+                                        <div class="item">
+                                            <img src={this.state.currentHotelObj.imageURL_2} alt="Image Not Found" style={sliderImagestyle} />
+                                        </div>
+
+                                        <div class="item">
+                                            <img src={this.state.currentHotelObj.imageURL_3} alt="Image Not Found" style={sliderImagestyle} />
+                                        </div>
+                                    </div>
+
+                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
                             </div>
+                            {/* Slider - End */}
+                            {/* Left side end */}
+                        </td>
+                        <td className="tright">
+                            {/* Right side start */}
+                            <tr>
+                                <div className="sizing">
+                                    Location:{this.state.currentHotelObj.location}
+                                </div>
+                            </tr>
+                            <tr>
+                                <div className="sizing">
+                                    Price Per Room:{this.state.currentHotelObj.price}
+                                </div>
+                            </tr>
+                            <tr>
+                                <div className="sizing">
+                                    Rating{this.state.currentHotelObj.rating}
+                                </div>
+                            </tr>
+                            <tr>
+                                <div className="sizing">
+                                    Available Room Count:{this.state.currentHotelObj.availableCount}
+                                </div>
+                            </tr>
+                            <tr>
+                                <div className="sizing">
+                                    Description:{this.state.currentHotelObj.description}
+                                </div>
+                            </tr>
+                            <tr>
+                                <div className="sizing">
+                                    Facilities:<br />
+                                    <ul>
+                                        {
+                                            this.state.currentHotelObj.facilities ? this.state.currentHotelObj.facilities.map((value, index) => <li key={index}>{value}</li>) : ''
+                                        }
+                                    </ul>
+                                </div>
+                            </tr>
+                            {/* Right side end */}
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
 
-                            <div class="item">
-                                <img src={this.state.currentHotelObj.imageURL_1} alt="Image Not Found" style={sliderImagestyle} />
-                            </div>
-
-                            <div class="item">
-                                <img src={this.state.currentHotelObj.imageURL_2} alt="Image Not Found" style={sliderImagestyle} />
-                            </div>
-
-                            <div class="item">
-                                <img src={this.state.currentHotelObj.imageURL_3} alt="Image Not Found" style={sliderImagestyle} />
-                            </div>
-                        </div>
-
-                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-                {/* Slider - End */}
 
 
 
 
 
 
-                {this.state.currentHotelObj._id}<br />
-                {this.state.currentHotelObj.availableCount} <br />
-                {this.state.currentHotelObj.description}<br />
+
+
+                {/* {this.state.currentHotelObj._id}<br /> */}
+                {/* {this.state.currentHotelObj.availableCount} <br /> */}
+                {/* {this.state.currentHotelObj.description}<br /> */}
                 {/* {this.state.currentHotelObj.imageURL_1}<br />
                 {this.state.currentHotelObj.imageURL_2}<br />
                 {this.state.currentHotelObj.imageURL_3}<br />
                 {this.state.currentHotelObj.imageURL_main}<br /> */}
-                {this.state.currentHotelObj.location}<br />
-                {this.state.currentHotelObj.price}<br />
+                {/* {this.state.currentHotelObj.location}<br /> */}
+                {/* {this.state.currentHotelObj.price}<br /> */}
 
-                <ul>
+                {/* <ul>
                     {
                         this.state.currentHotelObj.facilities ? this.state.currentHotelObj.facilities.map((value, index) => <li key={index}>{value}</li>) : ''
                     }
-                </ul>
+                </ul> */}
 
 
             </div>
